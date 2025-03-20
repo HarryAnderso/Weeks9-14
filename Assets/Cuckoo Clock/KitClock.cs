@@ -58,7 +58,7 @@ public class KitClock : MonoBehaviour
             hourHand.Rotate(0, 0, -(30 / timeAnHourTakes) * Time.deltaTime);
             yield return null;
         }
-        OnTheHour.Invoke();
+        OnTheHour.Invoke(hour);
     }
 
     public void StopTheClock()

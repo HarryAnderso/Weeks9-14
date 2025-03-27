@@ -10,11 +10,13 @@ public class Knight : MonoBehaviour
     public float speed;
     Animator animator;
     public bool canRun = true;
+    private AudioSource audiosource;
 
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
+        audiosource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -40,5 +42,11 @@ public class Knight : MonoBehaviour
     {
         Debug.Log("the attack animation has just finished");
         canRun = true;
+    }
+
+    public void WalkingSounds()
+    {
+        audiosource.Play();
+        Debug.Log("noise is technicly playing");
     }
 }
